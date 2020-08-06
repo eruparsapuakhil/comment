@@ -2,7 +2,7 @@
 $server="localhost";
 $user="root";
 $pass="";
-$dbname="review";
+$dbname="reviews";
 $conn=mysqli_connect($server,$user,$pass,$dbname);
 
 if(!$conn)
@@ -30,7 +30,7 @@ else {
 
       }
       else{
-        $sql= "SELECT email FROM com WHERE email=?";
+        $sql= "SELECT email FROM comment WHERE email=?";
         $stmt=mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql))
         {
@@ -48,7 +48,7 @@ else {
               exit();
           }
           else{
-            $sql="INSERT INTO com(user,email,comment)VALUES(?,?,?)";
+            $sql="INSERT INTO comment(user,email,comment)VALUES(?,?,?)";
 
               $stmt=mysqli_stmt_init($conn);
               if(!mysqli_stmt_prepare($stmt,$sql))
