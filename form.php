@@ -323,15 +323,15 @@ if(isset($_GET['error']))
 $server='localhost';
 $user='root';
 $pass='';
-$dbname='review';
+$dbname='reviews';
 $conn=mysqli_connect($server,$user,$pass,$dbname);
-$sql='SELECT * FROM com';
+$sql='SELECT * FROM comment';
 $res=mysqli_query($conn,$sql);
 if(mysqli_num_rows($res)>0){
     echo '<table >';
     echo '<thead>';
     echo '<tr>';
- echo '<th>S.no</th>';
+  
  echo '<th>Name</th>';
  echo '<th>Email</th>';
  echo '<th>Comment</th>';
@@ -341,7 +341,7 @@ if(mysqli_num_rows($res)>0){
     while($row=mysqli_fetch_assoc($res))
     {
         echo '<tr>';
-        echo '<td>'.$row['id'].'</td>';
+         
         echo '<td>'.$row['user'].'</td>';
         echo '<td>'.$row['email'].'</td>';
         echo '<td>'.$row['comment'].'</td>';
@@ -365,13 +365,14 @@ elseif($_GET['error']=='comnted')
 
 
 ?>
-
-
-
-
-
-
-
-</body>
+  </body>
 
 </html>
+
+
+
+
+
+
+
+ 
